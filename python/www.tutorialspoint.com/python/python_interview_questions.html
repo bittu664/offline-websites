@@ -1,0 +1,982 @@
+<!doctype html> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+
+<!-- Mirrored from www.tutorialspoint.com/python/python_interview_questions.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Jan 2017 10:29:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="utf-8">
+<title>Python Interview Questions</title>
+<meta name="description" content="Python Interview Questions - Learning Python in simple and easy steps : A beginner's tutorial containing complete knowledge of Python Syntax Object Oriented Language, Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML Programming." />
+<meta name="Keywords" content="Python, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Networking, Multithreading,Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML, Programming." />
+<base  />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="robots" content="index, follow"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="../theme/js/script-min-v4.js"></script>
+<link rel="stylesheet" href="../theme/css/style-min.css">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fdbf00 url(../images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fdbf00 !important;}
+.submenu-item{ border-bottom: 2px solid #fdbf00 !important; border-top: 2px solid #fdbf00 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="../images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="https://www.tutorialspoint.com/index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="https://www.tutorialspoint.com/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a href="http://www.sendfiles.net/"><i class="fa fa-send"></i> &nbsp;SENDFiles</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="../theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="https://www.tutorialspoint.com/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+         <!-- search code here  --> 
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+   </div>
+  
+   <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="https://www.tutorialspoint.com/index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/tutor_connect/index.php"><i class="fa-user"> </i> Tutor Connect</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+         <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+         
+      </div>
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="images/python-mini.jpg" alt="Python Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Basic Tutorial</li>
+<li><a target="_top" href="index-2.html">Python - Home</a></li>
+<li><a target="_top" href="python_overview.html">Python - Overview</a></li>
+<li><a target="_top" href="python_environment.html">Python - Environment Setup</a></li>
+<li><a target="_top" href="python_basic_syntax.html">Python - Basic Syntax</a></li>
+<li><a target="_top" href="python_variable_types.html">Python - Variable Types</a></li>
+<li><a target="_top" href="python_basic_operators.html">Python - Basic Operators</a></li>
+<li><a target="_top" href="python_decision_making.html">Python - Decision Making</a></li>
+<li><a target="_top" href="python_loops.html">Python - Loops</a></li>
+<li><a target="_top" href="python_numbers.html">Python - Numbers</a></li>
+<li><a target="_top" href="python_strings.html">Python - Strings</a></li>
+<li><a target="_top" href="python_lists.html">Python - Lists</a></li>
+<li><a target="_top" href="python_tuples.html">Python - Tuples</a></li>
+<li><a target="_top" href="python_dictionary.html">Python - Dictionary</a></li>
+<li><a target="_top" href="python_date_time.html">Python - Date &amp; Time</a></li>
+<li><a target="_top" href="python_functions.html">Python - Functions</a></li>
+<li><a target="_top" href="python_modules.html">Python - Modules</a></li>
+<li><a target="_top" href="python_files_io.html">Python - Files I/O</a></li>
+<li><a target="_top" href="python_exceptions.html">Python - Exceptions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Advanced Tutorial</li>
+<li><a target="_top" href="python_classes_objects.html">Python - Classes/Objects</a></li>
+<li><a target="_top" href="python_reg_expressions.html">Python - Reg Expressions</a></li>
+<li><a target="_top" href="python_cgi_programming.html">Python - CGI Programming</a></li>
+<li><a target="_top" href="python_database_access.html">Python - Database Access</a></li>
+<li><a target="_top" href="python_networking.html">Python - Networking</a></li>
+<li><a target="_top" href="python_sending_email.html">Python - Sending Email</a></li>
+<li><a target="_top" href="python_multithreading.html">Python - Multithreading</a></li>
+<li><a target="_top" href="python_xml_processing.html">Python - XML Processing</a></li>
+<li><a target="_top" href="python_gui_programming.html">Python - GUI Programming</a></li>
+<li><a target="_top" href="python_further_extensions.html">Python - Further Extensions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python  Useful Resources</li>
+<li><a target="_top" href="python_questions_answers.html">Python - Questions and Answers</a></li>
+<li><a target="_top" href="python_quick_guide.html">Python - Quick Guide</a></li>
+<li><a target="_top" href="python_tools_utilities.html">Python - Tools/Utilities</a></li>
+<li><a target="_top" href="python_useful_resources.html">Python - Useful Resources</a></li>
+<li><a target="_top" href="python_discussion.html">Python - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Python Interview Questions</h1>
+<div class="topgooglead">
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="python_questions_answers.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="python_questions_answers.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>Dear readers, these <b>Python Programming Language Interview Questions</b> have been designed specially to get you acquainted with the nature of questions you may encounter during your interview for the subject of <b>Python Programming Language</b>. As per my experience good interviewers hardly plan to ask any particular question during your interview, normally questions start with some basic concept of the subject and later they continue based on further discussion and what you answer &minus;</p>
+<section class="toggle">
+<label>What is Python?</label>
+<div class="toggle-content">
+<p> Python is a high-level, interpreted, interactive and object-oriented scripting language. Python is designed to be highly readable. It uses English keywords frequently where as other languages use punctuation, and it has fewer syntactical constructions than other languages.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Name some of the features of Python.</label>
+<div class="toggle-content">
+<p> Following are some of the salient features of python &minus;</p>
+<ul class="list">
+<li><p>It supports functional and structured programming methods as well as OOP.</p></li>
+<li><p>It can be used as a scripting language or can be compiled to byte-code for building large applications.</p></li>
+<li><p>It provides very high-level dynamic data types and supports dynamic type checking.</p></li>
+<li><p>It supports automatic garbage collection.</p></li>
+<li><p>It can be easily integrated with C, C++, COM, ActiveX, CORBA, and Java.</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of PYTHONPATH environment variable?</label>
+<div class="toggle-content">
+<p> PYTHONPATH - It has a role similar to PATH. This variable tells the Python interpreter where to locate the module files imported into a program. It should include the Python source library directory and the directories containing Python source code. PYTHONPATH is sometimes preset by the Python installer.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of PYTHONSTARTUP environment variable?</label>
+<div class="toggle-content">
+<p> PYTHONSTARTUP - It contains the path of an initialization file containing Python source code. It is executed every time you start the interpreter. It is named as .pythonrc.py in Unix and it contains commands that load utilities or modify PYTHONPATH.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of PYTHONCASEOK environment variable?</label>
+<div class="toggle-content">
+<p> PYTHONCASEOK  &minus; It is used in Windows to instruct Python to find the first case-insensitive match in an import statement. Set this variable to any value to activate it.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of PYTHONHOME environment variable?</label>
+<div class="toggle-content">
+<p> PYTHONHOME &minus; It is an alternative module search path. It is usually embedded in the PYTHONSTARTUP or PYTHONPATH directories to make switching module libraries easy.</p>
+</div>
+</section>
+<section class="toggle">
+<label>Is python a case sensitive language?</label>
+<div class="toggle-content">
+<p> Yes! Python is a case sensitive programming language.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are the supported data types in Python?</label>
+<div class="toggle-content">
+<p> Python has five standard data types &minus;</p>
+<ul class="list">
+<li><p>Numbers</p></li>
+<li><p>String</p></li>
+<li><p>List</p></li>
+<li><p>Tuple</p></li>
+<li><p>Dictionary</p></li>
+</ul>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print str if str = 'Hello World!'?</label>
+<div class="toggle-content">
+<p> It will print complete string. Output would be Hello World!.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print str[0] if str = 'Hello World!'?</label>
+<div class="toggle-content">
+<p> It will print first character of the string. Output would be H.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print str[2:5] if str = 'Hello World!'?</label>
+<div class="toggle-content">
+<p> It will print characters starting from 3rd to 5th. Output would be llo.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print str[2:] if str = 'Hello World!'?</label>
+<div class="toggle-content">
+<p> It will print characters starting from 3rd character. Output would be llo World!.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print str * 2 if str = 'Hello World!'?</label>
+<div class="toggle-content">
+<p> It will print string two times. Output would be Hello World!Hello World!.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print str + "TEST" if str = 'Hello World!'?</label>
+<div class="toggle-content">
+<p> It will print concatenated string. Output would be Hello World!TEST.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print list if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?</label>
+<div class="toggle-content">
+<p>It will print concatenated lists. Output would be [ 'abcd', 786 , 2.23, 'john', 70.2 ].</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print list[0] if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?</label>
+<div class="toggle-content">
+<p> It will print first element of the list. Output would be abcd.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print list[1:3] if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?</label>
+<div class="toggle-content">
+<p> It will print elements starting from 2nd till 3rd. Output would be [786, 2.23].</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print list[2:] if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]?</label>
+<div class="toggle-content">
+<p> It will print elements starting from 3rd element. Output would be [2.23, 'john', 70.200000000000003].</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tinylist * 2 if tinylist = [123, 'john']?</label>
+<div class="toggle-content">
+<p> It will print list two times. Output would be [123, 'john', 123, 'john'].</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print list + tinylist * 2 if list = [ 'abcd', 786 , 2.23, 'john', 70.2 ] and tinylist = [123, 'john']?</label>
+<div class="toggle-content">
+<p> It will print concatenated lists. Output would be ['abcd', 786, 2.23, 'john', 70.2, 123, 'john', 123, 'john'].</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are tuples in Python?</label>
+<div class="toggle-content">
+<p> A tuple is another sequence data type that is similar to the list. A tuple consists of a number of values separated by commas. Unlike lists, however, tuples are enclosed within parentheses.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the difference between tuples and lists in Python?</label>
+<div class="toggle-content">
+<p> The main differences between lists and tuples are &minus; Lists are enclosed in brackets ( [ ] ) and their elements and size can be changed, while tuples are enclosed in parentheses ( ( ) ) and cannot be updated. Tuples can be thought of as read-only lists.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tuple if tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )?</label>
+<div class="toggle-content">
+<p> It will print complete tuple. Output would be ('abcd', 786, 2.23, 'john', 70.200000000000003).</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tuple[0] if tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )?</label>
+<div class="toggle-content">
+<p> It will print first element of the tuple. Output would be abcd.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tuple[1:3] if tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )?</label>
+<div class="toggle-content">
+<p> It will print elements starting from 2nd till 3rd. Output would be (786, 2.23).</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tuple[2:] if tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 )?</label>
+<div class="toggle-content">
+<p> It will print elements starting from 3rd element. Output would be (2.23, 'john', 70.200000000000003).</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tinytuple * 2 if tinytuple = (123, 'john')?</label>
+<div class="toggle-content">
+<p> It will print tuple two times. Output would be (123, 'john', 123, 'john').</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of print tuple + tinytuple if tuple = ( 'abcd', 786 , 2.23, 'john', 70.2 ) and tinytuple = (123, 'john')?</label>
+<div class="toggle-content">
+<p> It will print concatenated tuples. Output would be ('abcd', 786, 2.23, 'john', 70.200000000000003, 123, 'john').</p>
+</div>
+</section>
+<section class="toggle">
+<label>What are Python's dictionaries?</label>
+<div class="toggle-content">
+<p> Python's dictionaries are kind of hash table type. They work like associative arrays or hashes found in Perl and consist of key-value pairs. A dictionary key can be almost any Python type, but are usually numbers or strings. Values, on the other hand, can be any arbitrary Python object.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a dictionary in python?</label>
+<div class="toggle-content">
+<p> Dictionaries are enclosed by curly braces ({ }) and values can be assigned and accessed using square braces ([]).</p>
+<pre class="prettyprint notranslate">
+dict = {}
+dict['one'] = "This is one"
+dict[2]     = "This is two"
+tinydict = {'name': 'john','code':6734, 'dept': 'sales'}
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get all the keys from the dictionary?</label>
+<div class="toggle-content">
+<p> Using dictionary.keys() function, we can get all the keys from the dictionary object.</p>
+<pre class="prettyprint notranslate">
+print dict.keys()   # Prints all the keys
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get all the values from the dictionary?</label>
+<div class="toggle-content">
+<p> Using dictionary.values() function, we can get all the values from the dictionary object.</p>
+<pre class="prettyprint notranslate">
+print dict.values()   # Prints all the values
+</pre>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to an int in python?</label>
+<div class="toggle-content">
+<p> int(x [,base]) - Converts x to an integer. base specifies the base if x is a string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to a long in python?</label>
+<div class="toggle-content">
+<p> long(x [,base] ) - Converts x to a long integer. base specifies the base if x is a string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to a float in python?</label>
+<div class="toggle-content">
+<p> float(x) &minus; Converts x to a floating-point number.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a object to a string in python?</label>
+<div class="toggle-content">
+<p> str(x) &minus; Converts object x to a string representation.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a object to a regular expression in python?</label>
+<div class="toggle-content">
+<p> repr(x) &minus; Converts object x to an expression string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a String to an object in python?</label>
+<div class="toggle-content">
+<p> eval(str) &minus; Evaluates a string and returns an object.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to a tuple in python?</label>
+<div class="toggle-content">
+<p> tuple(s) &minus; Converts s to a tuple.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to a list in python?</label>
+<div class="toggle-content">
+<p> list(s) &minus; Converts s to a list.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to a set in python?</label>
+<div class="toggle-content">
+<p> set(s) &minus; Converts s to a set.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you create a dictionary using tuples in python?</label>
+<div class="toggle-content">
+<p> dict(d) &minus; Creates a dictionary. d must be a sequence of (key,value) tuples.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to a frozen set in python?</label>
+<div class="toggle-content">
+<p> frozenset(s) &minus; Converts s to a frozen set.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert an integer to a character in python?</label>
+<div class="toggle-content">
+<p> chr(x) &minus; Converts an integer to a character.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert an integer to an unicode character in python?</label>
+<div class="toggle-content">
+<p> unichr(x) &minus; Converts an integer to a Unicode character.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a single character to its integer value in python?</label>
+<div class="toggle-content">
+<p> ord(x) &minus; Converts a single character to its integer value.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert an integer to hexadecimal string in python?</label>
+<div class="toggle-content">
+<p> hex(x) &minus; Converts an integer to a hexadecimal string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert an integer to octal string in python?</label>
+<div class="toggle-content">
+<p> oct(x) &minus; Converts an integer to an octal string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of ** operator?</label>
+<div class="toggle-content">
+<p> ** Exponent &minus; Performs exponential (power) calculation on operators. a**b = 10 to the power 20 if a = 10 and b = 20.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of // operator?</label>
+<div class="toggle-content">
+<p> // Floor Division &minus;  The division of operands where the result is the quotient in which the digits after the decimal point are removed.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of is operator?</label>
+<div class="toggle-content">
+<p> is &minus; Evaluates to true if the variables on either side of the operator point to the same object and false otherwise. x is y, here is results in 1 if id(x) equals id(y).</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose of not in operator?</label>
+<div class="toggle-content">
+<p> not in &minus; Evaluates to true if it does not finds a variable in the specified sequence and false otherwise. x not in y, here not in results in a 1 if x is not a member of sequence y.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose break statement in python?</label>
+<div class="toggle-content">
+<p> break statement &minus; Terminates the loop statement and transfers execution to the statement immediately following the loop.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose continue statement in python?</label>
+<div class="toggle-content">
+<p> continue statement &minus; Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the purpose pass statement in python?</label>
+<div class="toggle-content">
+<p> pass statement &minus; The pass statement in Python is used when a statement is required syntactically but you do not want any command or code to execute.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can you pick a random item from a list or tuple?</label>
+<div class="toggle-content">
+<p> choice(seq) &minus; Returns a random item from a list, tuple, or string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can you pick a random item from a range?</label>
+<div class="toggle-content">
+<p> randrange ([start,] stop [,step]) &minus; returns a randomly selected element from range(start, stop, step).</p>
+</div>
+</section>
+<section class="toggle">
+<label>How can you get a random number in python?</label>
+<div class="toggle-content">
+<p> random() &minus; returns a random float r, such that 0 is less than or equal to r and r is less than 1.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you set the starting value in generating random numbers?</label>
+<div class="toggle-content">
+<p> seed([x]) &minus; Sets the integer starting value used in generating random numbers. Call this function before calling any other random module function. Returns None.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you randomizes the items of a list in place?</label>
+<div class="toggle-content">
+<p> shuffle(lst) &minus; Randomizes the items of a list in place. Returns None.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you capitalizes first letter of string?</label>
+<div class="toggle-content">
+<p> capitalize() &minus; Capitalizes first letter of string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are alphanumeric?</label>
+<div class="toggle-content">
+<p> isalnum() &minus; Returns true if string has at least 1 character and all characters are alphanumeric and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are digits?</label>
+<div class="toggle-content">
+<p> isdigit() &minus; Returns true if string contains only digits and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are in lowercase?</label>
+<div class="toggle-content">
+<p> islower() &minus; Returns true if string has at least 1 cased character and all cased characters are in lowercase and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are numerics?</label>
+<div class="toggle-content">
+<p> isnumeric() &minus; Returns true if a unicode string contains only numeric characters and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are whitespaces?</label>
+<div class="toggle-content">
+<p> isspace() &minus; Returns true if string contains only whitespace characters and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that it is properly titlecased?</label>
+<div class="toggle-content">
+<p> istitle() &minus; Returns true if string is properly "titlecased" and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are in uppercase?</label>
+<div class="toggle-content">
+<p> isupper() &minus; Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you merge elements in a sequence?</label>
+<div class="toggle-content">
+<p> join(seq) &minus; Merges (concatenates) the string representations of elements in sequence seq into a string, with separator string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the length of the string? </label>
+<div class="toggle-content">
+<p> len(string) &minus; Returns the length of the string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get a space-padded string with the original string left-justified to a total of width columns? </label>
+<div class="toggle-content">
+<p> ljust(width[, fillchar]) &minus; Returns a space-padded string with the original string left-justified to a total of width columns.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to all lowercase? </label>
+<div class="toggle-content">
+<p> lower() &minus; Converts all uppercase letters in string to lowercase.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you remove all leading whitespace in string? </label>
+<div class="toggle-content">
+<p> lstrip() &minus; Removes all leading whitespace in string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the max alphabetical character from the string?</label>
+<div class="toggle-content">
+<p> max(str) &minus; Returns the max alphabetical character from the string str.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the min alphabetical character from the string?</label>
+<div class="toggle-content">
+<p> min(str) &minus; Returns the min alphabetical character from the string str.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you replaces all occurrences of old substring in string with new string?</label>
+<div class="toggle-content">
+<p> replace(old, new [, max]) &minus; Replaces all occurrences of old in string with new or at most max occurrences if max given.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you remove all leading and trailing whitespace in string?</label>
+<div class="toggle-content">
+<p> strip([chars]) &minus; Performs both lstrip() and rstrip() on string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you change case for all letters in string?</label>
+<div class="toggle-content">
+<p> swapcase() &minus; Inverts case for all letters in string.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get titlecased version of string?</label>
+<div class="toggle-content">
+<p> title() &minus; Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you convert a string to all uppercase? </label>
+<div class="toggle-content">
+<p> upper() &minus; Converts all lowercase letters in string to uppercase.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you check in a string that all characters are decimal?</label>
+<div class="toggle-content">
+<p> isdecimal() &minus; Returns true if a unicode string contains only decimal characters and false otherwise.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the difference between del() and remove() methods of list?</label>
+<div class="toggle-content">
+<p> To remove a list element, you can use either the del statement if you know exactly which element(s) you are deleting or the remove() method if you do not know. </p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of len([1, 2, 3])?</label>
+<div class="toggle-content">
+<p> 3.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of [1, 2, 3] + [4, 5, 6]?</label>
+<div class="toggle-content">
+<p> [1, 2, 3, 4, 5, 6]</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of ['Hi!'] * 4?</label>
+<div class="toggle-content">
+<p> ['Hi!', 'Hi!', 'Hi!', 'Hi!']</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of 3 in [1, 2, 3]?</label>
+<div class="toggle-content">
+<p> True</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of for x in [1, 2, 3]: print x?</label>
+<div class="toggle-content">
+<p> 1 2 3</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of L[2] if L = [1,2,3]?</label>
+<div class="toggle-content">
+<p> 3, Offsets start at zero.</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of L[-2] if L = [1,2,3]?</label>
+<div class="toggle-content">
+<p>L[-1] = 3, L[-2]=2, L[-3]=1</p>
+</div>
+</section>
+<section class="toggle">
+<label>What is the output of L[1:] if L = [1,2,3]?</label>
+<div class="toggle-content">
+<p> 2, 3, Slicing fetches sections.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you compare two lists?</label>
+<div class="toggle-content">
+<p> cmp(list1, list2) &minus; Compares elements of both lists.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the length of a list?</label>
+<div class="toggle-content">
+<p> len(list) &minus; Gives the total length of the list.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the max valued item of a list?</label>
+<div class="toggle-content">
+<p> max(list) &minus; Returns item from the list with max value.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the min valued item of a list?</label>
+<div class="toggle-content">
+<p> min(list) &minus; Returns item from the list with min value.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you get the index of an object in a list?</label>
+<div class="toggle-content">
+<p> list.index(obj) &minus; Returns the lowest index in list that obj appears.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you insert an object at given index in a list?</label>
+<div class="toggle-content">
+<p> list.insert(index, obj) &minus; Inserts object obj into list at offset index.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you remove last object from a list?</label>
+<div class="toggle-content">
+<p> list.pop(obj=list[-1]) &minus; Removes and returns last object or obj from list.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you remove an object from a list?</label>
+<div class="toggle-content">
+<p> list.remove(obj) &minus; Removes object obj from list.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you reverse a list?</label>
+<div class="toggle-content">
+<p> list.reverse() &minus; Reverses objects of list in place.</p>
+</div>
+</section>
+<section class="toggle">
+<label>How will you sort a list?</label>
+<div class="toggle-content">
+<p> list.sort([func]) &minus; Sorts objects of list, use compare func if given.</p>
+</div>
+</section>
+<h2>What is Next?</h2>
+<p>Further you can go through your past assignments you have done with the subject and make sure you are able to speak confidently on them. If you are fresher then interviewer does not expect you will answer very complex questions, rather you have to make your basics concepts very strong.</p>
+<p>Second it really doesn't matter much if you could not answer few questions but it matters that whatever you answered, you must have answered with confidence. So just feel confident during your interview. We at tutorialspoint wish you best luck to have a good interviewer and all the very best for your future endeavor. Cheers :-)</p>
+<hr />
+<div class="pre-btn">
+<a href="python_questions_answers.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div><div class="print-btn">
+<a href="https://www.tutorialspoint.com/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="pdf/python_interview_questions.pdf" title="Python Interview Questions" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="python_questions_answers.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'http://www.tutorialspoint.com/python/python_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'http://www.tutorialspoint.com/python/python_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'http://www.tutorialspoint.com/python/python_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=http://www.tutorialspoint.com/python/python_interview_questions.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/python/python_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=http://www.tutorialspoint.com/python/python_interview_questions.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="../scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="https://www.tutorialspoint.com/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/faq.htm">FAQ's</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/about_helping.htm">Helping</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2016. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="../theme/js/custom-min.js"></script>
+<script src="../../www.google-analytics.com/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script type="text/javascript" src="../theme/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+   var tryit = new $.TryIt('try_python.html');
+   tryit.compile();
+</script></div>
+</body>
+
+<!-- Mirrored from www.tutorialspoint.com/python/python_interview_questions.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Jan 2017 10:29:03 GMT -->
+</html>

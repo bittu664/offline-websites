@@ -1,0 +1,5 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.tutorialspoint.com	TRUE	/	FALSE	1999999999	PHPSESSID	cl1t3741u0je2d3uq9snrq99l7
+.paypalobjects.com	TRUE	/	FALSE	1999999999	PYPF	CT-1
+

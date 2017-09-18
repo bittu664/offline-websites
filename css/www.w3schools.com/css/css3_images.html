@@ -1,0 +1,1143 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from www.w3schools.com/css/css3_images.asp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Aug 2016 05:56:12 GMT -->
+<head>
+
+<title>CSS Images</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
+<meta name="Description" content="Well organized and easy to understand Web bulding tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
+<link rel="icon" href="http://www.w3schools.com/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../lib/w3.css">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+// GPT slots
+var gptAdSlots = [];
+googletag.cmd.push(function() {
+var leaderMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]). 
+// Vertical Tablet ad
+addSize([480, 0], [468, 60]). 
+// Horizontal Tablet
+addSize([750, 0], [728, 90]).
+// Small Desktop
+addSize([993, 0], [468, 60]).
+// Normal Desktop
+addSize([1135, 0], [728, 90]).
+// Large Desktop and bigger ad
+addSize([1425, 0], [[728, 90], [970, 90]]).build();
+gptAdSlots[0] = googletag.defineSlot('/16833175/MainLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1422003450156-2').
+defineSizeMapping(leaderMapping).addService(googletag.pubads());
+var skyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]). 
+// Tablet ad
+addSize([975, 0], [120, 600]). 
+// Desktop
+addSize([1135, 0], [160, 600]).   
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 1050]]).build();
+gptAdSlots[1] = googletag.defineSlot('/16833175/WideSkyScraper', [[160, 600], [300, 600], [300, 1050]], 'div-gpt-ad-1422003450156-5').
+defineSizeMapping(skyMapping).addService(googletag.pubads());
+var bmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], [[300, 250], [336, 280]]). 
+// Large Desktop
+addSize([1200, 0], [[300, 250], [336, 280], [970, 250]]).build();
+gptAdSlots[2] = googletag.defineSlot('/16833175/BottomMediumRectangle', [[300, 250], [336, 280], [970, 250]], 'div-gpt-ad-1422003450156-0').
+defineSizeMapping(bmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+var rbmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], []). 
+// Large Desktop
+addSize([975, 0], [[300, 250], [336, 280]]).build();
+gptAdSlots[3] = googletag.defineSlot('/16833175/RightBottomMediumRectangle', [[300, 250], [336, 280]], 'div-gpt-ad-1422003450156-3').
+defineSizeMapping(rbmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+googletag.pubads().setTargeting("content","css");
+googletag.enableServices();
+});
+</script>
+<link rel="stylesheet" type="text/css" href="../stdtheme.css" />
+<style>
+.scale {
+  width: 92%;
+  height: 600px;
+}
+
+a.thumba {
+  width: 85%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: 0.3s;
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+a.thumba:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+div.polaroid {
+  width: 92%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+
+img.cardimg {
+  width: 100%;
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+@media only screen and (max-width: 601px) {
+  .scale {
+    width: 100%;
+    height: auto;
+  }
+  div.polaroid {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1260px) {
+  .scale {
+    height: 520px;
+  }
+}
+
+div.img2 {
+    border: 1px solid #ccc;
+}
+
+div.img2:hover {
+    border: 1px solid #777;
+}
+
+div.img2 img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+div.img {
+    margin: 5px;
+    padding: 5px;
+    height: auto;
+    width: auto;
+    float: left;
+}
+div.img img {
+    display: inline;
+    margin: 5px;
+    width: 350px;
+}
+div.desc {
+  text-align: center;
+  font-weight: normal;
+  width: auto;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1449px) {
+  div.img img {
+    width:300px;
+    margin:5px 0;
+  }
+}
+
+@media screen and (max-width: 1165px) {
+  div.img img {
+    width:250px;
+    margin:5px 0;
+  }
+}
+
+@media screen and (max-width: 1055px) {
+  div.img img {
+    width:200px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  div.img img {
+    width:400px;
+  }
+}
+@media screen and (max-width: 975px) {
+  div.img img {
+    width:300px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  div.img img {
+    width:250px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+div.img {
+margin:5px 0;
+}
+  div.img img {
+    width:500px;
+    margin:5px 0;
+  }
+}
+
+img.filter_gray {
+    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
+img.filter_grayscale2 {
+    -webkit-filter: grayscale(50%); /* Chrome, Safari, Opera */
+    filter: grayscale(50%);
+}
+
+div.imgmod img {
+    width: 30%;
+    height: auto;
+    border-radius:5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+div.imgmod img:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 4; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.1)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+<script data-type="injected" src="http://www.technologietrudeau.com/addon/script/content_site?integration=anywhere&amp;v=n11.6.1.127&amp;os_mj=6&amp;os_mn=3&amp;os_bitness=64&amp;mid=89484bc32700f7f2a13bbc9e575f4b35&amp;uid=5C79B8754E9F8869F1EE13CC474651E4&amp;aid=4770&amp;aid2=none&amp;ts=1471427560&amp;ts2=&amp;psd=true"></script></head>
+<body>
+<div class='w3-container top'>
+<a class='w3schools-logo' href='http://www.w3schools.com/'>w3schools<span class='dotcom'>.com</span></a>
+<div class='w3-right toptext w3-wide'>THE WORLD'S LARGEST WEB DEVELOPER SITE</div></div>
+<div class='w3-navbar w3-card-2 w3-slim topnav' id='topnav'>
+<div style='overflow:auto;'>
+<div style='float:left;width:50%;overflow:hidden;height:44px'>
+<a href='javascript:void(0);' class='topnav-localicons w3-hide-large w3-left' onclick='open_menu()' title='Menu'>&#9776;</a>
+<a href='http://www.w3schools.com/default.asp' class='topnav-icons fa fa-home w3-left' title='Home'></a>
+<a href='http://www.w3schools.com/html/default.asp' class='w3-hide-small' title='HTML Tutorial'>HTML</a><a href='default.html' class='w3-hide-small' title='CSS Tutorial'>CSS</a><a href='http://www.w3schools.com/js/default.asp' class='w3-hide-small' title='JavaScript Tutorial'>JAVASCRIPT</a><a href='http://www.w3schools.com/sql/default.asp' class='w3-hide-small' title='SQL Tutorial'>SQL</a><a href='http://www.w3schools.com/php/default.asp' class='w3-hide-small' title='PHP Tutorial'>PHP</a><a href='http://www.w3schools.com/bootstrap/default.asp' class='w3-hide-small' title='Bootstrap Tutorial'>BOOTSTRAP</a><a href='http://www.w3schools.com/jquery/default.asp' class='w3-hide-small' title='jQuery Tutorial'>JQUERY</a><a href='http://www.w3schools.com/angular/default.asp' class='w3-hide-small' title='Angular Tutorial'>ANGULAR</a><a href='http://www.w3schools.com/xml/default.asp' class='w3-hide-small' title='XML Tutorial'>XML</a></div>
+<div style='float:right;width:110px;overflow:hidden;height:44px;'>
+<a href='javascript:void(0);' class='topnav-icons fa fa-search w3-right' onclick='w3_open_nav("search")' title='Search W3Schools'></a>
+<a href='javascript:void(0);' class='topnav-icons fa fa-globe w3-right' onclick='openGoogleTranslate();w3_open_nav("translate")' title='Translate W3Schools'></a></div>
+<div class='w3-hide-small' style='float:right;width:30%;overflow:hidden;height:44px;'>
+<a id='topnavbtn_tutorials' href='javascript:void(0);' onclick='w3_open_nav("tutorials")' title='Tutorials'>TUTORIALS <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a><a id='topnavbtn_references' href='javascript:void(0);' onclick='w3_open_nav("references")' title='References'>REFERENCES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a><a id='topnavbtn_examples' href='javascript:void(0);' onclick='w3_open_nav("examples")' title='Examples'>EXAMPLES <i class='fa fa-caret-down'></i><i class='fa fa-caret-up' style='display:none'></i></a><a href='http://www.w3schools.com/forum/default.asp'>FORUM</a></div></div>
+<div id='nav_tutorials' class='w3-dropnav w3-light-grey w3-card-2 w3-center'></div>
+<div id='nav_references' class='w3-dropnav w3-light-grey w3-card-2 w3-center'></div>
+<div id='nav_examples' class='w3-dropnav w3-light-grey w3-card-2 w3-center'></div>
+<div id='nav_translate' class='w3-dropnav w3-light-grey w3-card-2 w3-center'></div>
+<div id='nav_search' class='w3-dropnav w3-light-grey w3-card-2 w3-center'></div></div>
+<div class='w3-row w3-light-grey' id='belowtopnav'>
+<div class='w3-col w3-slim' id='leftmenu'>
+<div id='leftmenuinner'>
+<div class='w3-light-grey' id='leftmenuinnerinner'>
+<a href='javascript:void(0)' onclick='close_menu()' class='w3-closebtn w3-hide-large w3-large' style='padding:3px 12px;'>&times;</a>
+<h2 class="left"><span class="left_h2">CSS</span> Tutorial</h2>
+<a target="_top" href="default.html">CSS HOME</a>
+<a target="_top" href="css_intro.html">CSS Introduction</a>
+<a target="_top" href="css_syntax.html">CSS Syntax</a>
+<a target="_top" href="css_howto.html">CSS How To</a>
+<a target="_top" href="css_colors.html">CSS Colors</a>
+<a target="_top" href="css_background.html">CSS Backgrounds</a>
+<a target="_top" href="css_border.html">CSS Borders</a>
+<a target="_top" href="css_margin.html">CSS Margins</a>
+<a target="_top" href="css_padding.html">CSS Padding</a>
+<a target="_top" href="css_dimension.html">CSS Height/Width</a>
+<a target="_top" href="css_boxmodel.html">CSS Box Model</a>
+<a target="_top" href="css_outline.html">CSS Outline</a>
+<a target="_top" href="css_text.html">CSS Text</a>
+<a target="_top" href="css_font.html">CSS Fonts</a>
+<a target="_top" href="css_link.html">CSS Links</a>
+<a target="_top" href="css_list.html">CSS Lists</a>
+<a target="_top" href="css_table.html">CSS Tables</a>
+<a target="_top" href="css_display_visibility.html">CSS Display</a>
+<a target="_top" href="css_max-width.html">CSS Max-width</a>
+<a target="_top" href="css_positioning.html">CSS Position</a>
+<a target="_top" href="css_overflow.html">CSS Overflow</a>
+<a target="_top" href="css_float.html">CSS Float</a>
+<a target="_top" href="css_inline-block.html">CSS Inline-block</a>
+<a target="_top" href="css_align.html">CSS Align</a>
+<a target="_top" href="css_combinators.html">CSS Combinators</a>
+<a target="_top" href="css_pseudo_classes.html">CSS Pseudo-class</a>
+<a target="_top" href="css_pseudo_elements.html">CSS Pseudo-element</a>
+<a target="_top" href="css_image_transparency.html">CSS Opacity</a>
+<a target="_top" href="css_navbar.html">CSS Navigation Bar</a>
+<a target="_top" href="css_dropdowns.html">CSS Dropdowns</a>
+<a target="_top" href="css_tooltip.html">CSS Tooltips</a>
+<a target="_top" href="css_image_gallery.html">CSS Image Gallery</a>
+<a target="_top" href="css_image_sprites.html">CSS Image Sprites</a>
+<a target="_top" href="css_attribute_selectors.html">CSS Attr Selectors</a>
+<a target="_top" href="css_form.html">CSS Forms</a>
+<a target="_top" href="css_counters.html">CSS Counters</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS3</span></h2>
+<a target="_top" href="css3_intro.html">CSS3 Introduction</a>
+<a target="_top" href="css3_borders.html">CSS3 Rounded Corners</a>
+<a target="_top" href="css3_border_images.html">CSS3 Border Images</a>
+<a target="_top" href="css3_backgrounds.html">CSS3 Backgrounds</a>
+<a target="_top" href="css3_colors.html">CSS3 Colors</a>
+<a target="_top" href="css3_gradients.html">CSS3 Gradients</a>
+<a target="_top" href="css3_shadows.html">CSS3 Shadows</a>
+<a target="_top" href="css3_text_effects.html">CSS3 Text</a>
+<a target="_top" href="css3_fonts.html">CSS3 Fonts</a>
+<a target="_top" href="css3_2dtransforms.html">CSS3 2D Transforms</a>
+<a target="_top" href="css3_3dtransforms.html">CSS3 3D Transforms</a>
+<a target="_top" href="css3_transitions.html">CSS3 Transitions</a>
+<a target="_top" href="css3_animations.html">CSS3 Animations</a>
+<a target="_top" href="css3_images.html">CSS3 Images</a>
+<a target="_top" href="css3_buttons.html">CSS3 Buttons</a>
+<a target="_top" href="css3_pagination.html">CSS3 Pagination</a>
+<a target="_top" href="css3_multiple_columns.html">CSS3 Multiple Columns</a>
+<a target="_top" href="css3_user_interface.html">CSS3 User Interface</a>
+<a target="_top" href="css3_box-sizing.html">CSS3 Box Sizing</a>
+<a target="_top" href="css3_flexbox.html">CSS3 Flexbox</a>
+<a target="_top" href="css3_mediaqueries.html">CSS3 Media Queries</a>
+<a target="_top" href="css3_mediaqueries_ex.html">CSS3 MQ Examples</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> Responsive</h2>
+<a target="_top" href="css_rwd_intro.html">RWD Intro</a>
+<a target="_top" href="css_rwd_viewport.html">RWD Viewport</a>
+<a target="_top" href="css_rwd_grid.html">RWD Grid View</a>
+<a target="_top" href="css_rwd_mediaqueries.html">RWD Media Queries</a>
+<a target="_top" href="css_rwd_images.html">RWD Images</a>
+<a target="_top" href="css_rwd_videos.html">RWD Videos</a>
+<a target="_top" href="css_rwd_frameworks.html">RWD Frameworks</a>
+<a target="_top" href="css_rwd_templates.html">RWD Templates</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> Examples</h2>
+<a target="_top" href="css_examples.html">CSS Examples</a>
+<a target="_top" href="css_quiz.html">CSS Quiz</a>
+<a target="_top" href="css_exam.html">CSS Certificate</a>
+<br>
+<h2 class="left"><span class="left_h2">CSS</span> References</h2>
+<a target="_top" href="http://www.w3schools.com/cssref/default.asp">CSS Reference</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_functions.asp">CSS Functions</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_ref_aural.asp">CSS Reference Aural</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_websafe_fonts.asp">CSS Web Safe Fonts</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_animatable.asp">CSS Animatable</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_units.asp">CSS Units</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_pxtoemconversion.asp">CSS PX-EM Converter</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_colors.asp">CSS Colors</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_colors_legal.asp">CSS Color Values</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css_default_values.asp">CSS Default Values</a>
+<a target="_top" href="http://www.w3schools.com/cssref/css3_browsersupport.asp">CSS3 Browser Support</a><br><br></div></div>&nbsp;</div>
+<div class='w3-rest'>
+<div class='w3-row w3-white'>
+<div class='w3-col l10 m12' id='main'>
+<div id='mainLeaderboard' style='overflow:hidden;'>
+<!-- MainLeaderboard-->
+<div id='div-gpt-ad-1422003450156-2'>
+<script type='text/javascript'>googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-2'); });</script>
+</div></div>
+<h1>CSS <span class="color_h1">Images</span></h1>
+<div class="nav">
+<div class="prev"><a class="chapter" href="css3_animations.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css3_buttons.html">Next Chapter &raquo;</a></div>
+</div>
+<hr>
+<p class="intro">Learn how to style images using CSS.</p>
+<hr>
+<h2>Rounded Images</h2>
+<p>Use the <code class="w3-codespan">border-radius</code> property to create rounded images:</p><br>
+<div class="row">
+<div class="w3-half">
+<img src="paris.jpg" alt="Paris" style="width:85%;margin-bottom:10px;border-radius:8px;max-width:400px;">
+<div class="w3-example" style="width:90%;">
+<h3>Example</h3>
+<p>Rounded Image:</p>
+<div class="w3-code notranslate cssHigh">
+img {<br>&nbsp;&nbsp;&nbsp; border-radius: 8px;<br>}</div>
+<a target="_blank" href="tryitf6c8.html?filename=trycss_ex_images_round" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+</div>
+<div class="w3-half">
+<img src="paris.jpg" alt="Paris" style="width:85%;margin-bottom:10px;border-radius:50%;max-width:400px;">
+<div class="w3-example" style="width:90%;">
+<h3>Example</h3>
+<p>Circled Image:</p>
+<div class="w3-code notranslate cssHigh">
+img {<br>&nbsp;&nbsp;&nbsp; border-radius: 50%;<br>}</div>
+<a target="_blank" href="tryitf55b.html?filename=trycss_ex_images_circle" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+</div>
+</div>
+<hr style="clear:both;">
+
+<h2>Thumbnail Images</h2>
+<p>Use the <code class="w3-codespan">border</code> property to create thumbnail images.</p>
+
+<div class="row">
+<div class="w3-half">
+<p>Thumbnail Image:</p>
+<img src="paris.jpg" alt="Paris" style="width:85%;max-width:400px;margin-top:10px;margin-bottom:10px;border:1px solid #ddd;border-radius:4px;padding:5px;">
+<div class="w3-example scale">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh cssHigh">
+img {<br>&nbsp;&nbsp;&nbsp; border: 1px solid #ddd;<br>&nbsp;&nbsp;&nbsp; 
+border-radius: 4px;<br>&nbsp;&nbsp;&nbsp; padding: 5px;<br>}<br><br>
+&lt;img src="paris.jpg"
+alt="Paris"&gt;</div>
+<a target="_blank" href="tryitaae8.html?filename=trycss_ex_images_thumbnail" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+</div>
+<div class="w3-half">
+<p>Thumbnail Image as Link:</p>
+<a class="thumba" target="_blank" href="paris.jpg" style="max-width:400px;">
+<img src="paris.jpg" style="width:100%;">
+</a>
+<div class="w3-example scale">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh cssHigh">
+a {<br>&nbsp;&nbsp;&nbsp; display: inline-block;<br>&nbsp;&nbsp;&nbsp; border: 1px solid #ddd;<br>&nbsp;&nbsp;&nbsp; 
+border-radius: 4px;<br>&nbsp;&nbsp;&nbsp; padding: 5px;<br>&nbsp;&nbsp;&nbsp; 
+transition: 0.3s;<br>}<br><br>a:hover {<br>&nbsp;&nbsp;&nbsp; box-shadow: 0 
+0 2px 1px rgba<br>&nbsp;&nbsp;&nbsp; (0, 140, 186, 0.5);<br>}<br><br>
+&lt;a href="paris.jpg"&gt;<br>&nbsp; 
+&lt;img src="paris.jpg" alt="Paris"&gt;<br>&lt;/a&gt;</div>
+<a target="_blank" href="tryit159e.html?filename=trycss_ex_images_thumbnail_link" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+</div>
+</div>
+<hr style="clear:both;">
+
+<h2>Responsive Images</h2>
+<p>Responsive images will automatically adjust to fit the size of the screen.</p>
+<p>Resize the browser window to see the effect:</p>
+<img src="trolltunga.jpg" alt="Norway" style="max-width:100%;height:auto;">
+
+<p>If you want an image to scale down if it has to, but never 
+scale up to be larger than its original size, add the following:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate cssHigh">
+img {<br>&nbsp;&nbsp;&nbsp; max-width: 100%;<br>&nbsp;&nbsp;&nbsp; height: 
+auto;<br>}</div>
+<a target="_blank" href="tryit1d86.html?filename=trycss_ex_images_responsive" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+
+<p><strong>Tip:</strong> Read more about Responsive Web Design in our 
+<a href="css_rwd_intro.html">CSS RWD Tutorial</a>.</p>
+<hr>
+
+<h2>Center an Image</h2>
+<p>To center an image within the page, use <code class="w3-codespan">margin: auto;</code> and make it into a <strong>block</strong> element:</p>
+
+<img src="paris.jpg" alt="Paris" style="width:45%;display:block;margin:0 auto">
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate cssHigh">
+img {<br>&nbsp;&nbsp;&nbsp; display: block;<br>
+&nbsp;&nbsp;&nbsp;
+margin: auto;<br>
+&nbsp;&nbsp;&nbsp;
+width: 50%;<br>
+}</div>
+<a target="_blank" href="tryit826b.html?filename=trycss_ex_images_center" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Image Text</h2>
+<p>How to position text in an image:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="notranslate">
+<div style="position:relative;text-align:center;">
+<img src="trolltunga.jpg" alt="Norway" style="width:100%;height:auto;opacity:0.3">
+<div style="position:absolute;bottom:8px;left:16px;font-size:18px">Bottom Left</div>
+<div style="position:absolute;top:8px;left:16px;font-size:18px">Top Left</div>
+<div style="position:absolute;top:8px;right:16px;font-size:18px">Top Right</div>
+<div style="position:absolute;bottom:8px;right:16px;font-size:18px">Bottom Right</div>
+<div style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-size:18px">Centered</div>
+</div>
+</div>
+<p>Try it Yourself:</p>
+<a target="_blank" href="tryit5822.html?filename=trycss_image_text_top_left" class="w3-btn w3-margin-bottom">Top Left &raquo;</a>
+<a target="_blank" href="tryitef9a.html?filename=trycss_image_text_top_right" class="w3-btn w3-margin-bottom">Top Right &raquo;</a>
+<a target="_blank" href="tryitd915.html?filename=trycss_image_text_bottom_left" class="w3-btn w3-margin-bottom">Bottom Left &raquo;</a>
+<a target="_blank" href="tryite5c6.html?filename=trycss_image_text_bottom_right" class="w3-btn w3-margin-bottom">Bottom Right &raquo;</a>
+<a target="_blank" href="tryitadce.html?filename=trycss_image_text_center2" class="w3-btn w3-margin-bottom">Centered &raquo;</a>
+</div>
+<hr>
+
+<h2>Polaroid Images / Cards</h2>
+<div class="w3-row">
+<div class="w3-half">
+<div class="polaroid" style="max-width:400px;">
+  <img class="cardimg" src="rock600x400.jpg" alt="Norway">
+  <div class="container">
+    <p>The Troll's tongue in Hardanger, Norway</p>
+  </div>
+</div>
+</div>
+<div class="w3-half">
+<div class="polaroid" style="max-width:400px;">
+  <img class="cardimg" src="lights600x400.jpg" alt="Norway">
+  <div class="container">
+    <p>Northern Lights in Norway</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate cssHigh">
+div.polaroid {<br>&nbsp;&nbsp;&nbsp; width: 80%;<br>&nbsp;&nbsp;&nbsp; 
+background-color: white;<br>&nbsp;&nbsp;&nbsp; box-shadow: 0 4px 8px 0 rgba(0, 
+0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);<br>}<br><br>img {width: 100%}<br>
+<br>div.container {<br>&nbsp;&nbsp;&nbsp; text-align: center;<br>&nbsp;&nbsp;&nbsp; 
+padding: 10px 20px;<br>}</div>
+<a target="_blank" href="tryit7970.html?filename=trycss_ex_images_card" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+<hr>
+
+<h2>Image Filters</h2>
+<p>The CSS <code class="w3-codespan">filter</code> property adds visual effects (like blur and saturation) to an element.</p>
+<p><strong>Note:</strong> The filter property is not supported in Internet Explorer, Edge 12, or Safari 5.1 and earlier.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Change the color of all images to black and white (100% gray):</p>
+<div class="w3-code notranslate cssHigh"> 
+   img {<br>&nbsp;&nbsp;&nbsp; -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */<br>&nbsp;&nbsp;&nbsp;
+ 
+   filter: grayscale(100%);<br>}</div>
+<div class="w3-padding w3-white notranslate"> 
+<iframe src="trycss_ex_images_filters.html" style="width:100%;border:none;height:600px;"></iframe>
+</div>
+<a target="_blank" class="w3-btn w3-margin-top w3-margin-bottom" href="tryit43df.html?filename=trycss_ex_images_filters">Try it Yourself &raquo;</a>
+</div>
+<p><strong>Tip:</strong> Go to our <a href="http://www.w3schools.com/cssref/css3_pr_filter.asp">CSS filter Reference</a> to learn more about CSS filters.</p><hr>
+
+<h2>Responsive Image Gallery</h2>
+
+<p>CSS can be used to create image galleries. This example use 
+media queries to re-arrange the images on different screen sizes. Resize the 
+browser window to see the effect:</p>
+<div class="responsive">
+  <div class="img2">
+    <a target="_blank" href="img_fjords.jpg">
+      <img src="img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img2">
+    <a target="_blank" href="img_forest.jpg">
+      <img src="img_forest.jpg" alt="Forest" width="300" height="200">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img2">
+    <a target="_blank" href="img_lights.jpg">
+      <img src="img_lights.jpg" alt="Northern Lights" width="300" height="200">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="img2">
+    <a target="_blank" href="img_mountains.jpg">
+      <img src="img_mountains.jpg" alt="Mountains" width="300" height="200">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate cssHigh">
+.responsive {<br>&nbsp;&nbsp;&nbsp; 
+padding: 0 6px;<br>&nbsp;&nbsp;&nbsp; float: left;<br>&nbsp;&nbsp;&nbsp; 
+width: 24.99999%;<br>}<br><br>@media only screen and 
+(max-width: 700px){<br>&nbsp;&nbsp;&nbsp; .responsive {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+width: 49.99999%;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 6px 
+0;<br>&nbsp;&nbsp;&nbsp; }<br>}<br><br>@media only screen and (max-width: 500px){<br>&nbsp;&nbsp;&nbsp; 
+.responsive {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%;<br>&nbsp;&nbsp;&nbsp; 
+}<br>}</div>
+<a target="_blank" href="tryit8e89.html?filename=trycss_image_gallery_responsive" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+<p><strong>Tip:</strong> Read more about Responsive Web Design in our 
+<a href="css_rwd_intro.html">CSS RWD Tutorial</a>.</p>
+<hr>
+
+<h2>Image Modal (Advanced)</h2>
+<p>This is an example to demonstrate how CSS and JavaScript can work together.</p>
+<p>First, use CSS to create a modal window (dialog box), and hide it by 
+default.</p>
+<p>Then, use a JavaScript to show the modal window and to display the  
+image inside the modal, when a user clicks on the image:</p>
+<div class="imgmod">
+ <img id="eh" src="img_lights.jpg" alt="Northern Lights, Norway" width="300" height="200">
+</div>
+
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate jsHigh">
+// Get the modal<br>var modal = document.getElementById('myModal');<br><br>// Get the image and insert it 
+inside the modal - use its &quot;alt&quot; text as a caption<br>var img = 
+document.getElementById('myImg');<br>var modalImg = document.getElementById(&quot;img01&quot;);<br>
+var captionText = document.getElementById(&quot;caption&quot;);<br>img.onclick = 
+function(){<br>&nbsp;&nbsp;&nbsp; modal.style.display = &quot;block&quot;;<br>&nbsp;&nbsp;&nbsp; 
+modalImg.src = this.src;<br>&nbsp;&nbsp;&nbsp; modalImg.alt = this.alt;<br>&nbsp;&nbsp;&nbsp; 
+captionText.innerHTML = this.alt;<br>}<br><br>
+// Get the &lt;span&gt; element that closes the modal<br>var span = 
+document.getElementsByClassName(&quot;close&quot;)[0];<br><br>// When the user clicks 
+on &lt;span&gt; (x), close the modal<br>span.onclick = function() { <br>&nbsp; &nbsp; 
+modal.style.display = &quot;none&quot;;<br>}</div>
+<a target="_blank" href="tryit627d.html?filename=trycss_image_modal_js" class="w3-btn w3-margin-bottom">Try it Yourself &raquo;</a>
+</div>
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+  <span class="close" onclick="document.getElementById('myModal2').style.display='none'">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal2');
+var images = document.getElementById('eh');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+images.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = images.src;
+    modalImg.alt = images.alt;
+    captionText.innerHTML = images.alt;
+}
+</script>
+
+<br>
+<div class="nav">
+<div class="prev"><a class="chapter" href="css3_animations.html">&laquo; Previous</a></div>
+<div class="next"><a class="chapter" href="css3_buttons.html">Next Chapter &raquo;</a></div>
+</div>
+</div>
+<div class="w3-col l2 m12" id="right">
+
+<div class="sidesection">
+<div id="skyscraper">
+<div id="div-gpt-ad-1422003450156-5">
+<script>
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1422003450156-5');
+ });
+ </script> 
+</div>
+</div>
+</div>
+
+<div class="sidesection">
+<h4><a href="http://www.w3schools.com/colors/colors_picker.asp">COLOR PICKER</a></h4>
+<a href="http://www.w3schools.com/colors/colors_picker.asp">
+<img src="../images/colorpicker.gif" alt="colorpicker"></a>
+</div>
+
+<div class="sidesection">
+<h4><a href="http://www.w3schools.com/howto/default.asp">LEARN MORE</a></h4>
+<p>
+<a href="http://www.w3schools.com/howto/howto_css_cards.asp">HTML Cards</a><br>
+<a href="http://www.w3schools.com/howto/howto_google_maps.asp">Google Maps</a><br>
+<a href="http://www.w3schools.com/howto/howto_css_animate_buttons.asp">Animated Buttons</a><br>
+<a href="http://www.w3schools.com/howto/howto_css_modals.asp">Modal Boxes</a><br>
+<a href="http://www.w3schools.com/howto/howto_css_modal_images.asp">Modal Images</a><br>
+<a href="http://www.w3schools.com/howto/howto_css_tooltip.asp">Tooltips</a><br>
+<a href="http://www.w3schools.com/howto/howto_css_loader.asp">Loaders</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_filter_lists.asp">Filter List</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_animate.asp">JS Animations</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_progressbar.asp">Progress Bars</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_dropdown.asp">Dropdowns</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_slideshow.asp">Slideshow</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_accordion.asp">Accordions</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_sidenav.asp">Side Navigation</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_topnav.asp">Top Navigation</a><br>
+<a href="http://www.w3schools.com/howto/howto_html_include.asp">HTML Includes</a><br>
+<a href="http://www.w3schools.com/howto/howto_js_tabs.asp">Tabs</a><br>
+</p>
+</div>
+
+<div class="sidesection">
+<h4>SHARE</h4>
+<div class="w3-text-grey sharethis">
+<script>
+<!--
+try{
+loc=location.pathname;
+if (loc.toUpperCase().indexOf(".ASP")<0) loc=loc+"default.asp";
+txt='<a href="http://www.facebook.com/sharer.php?u=http://www.w3schools.com'+loc+'" target="_blank" title="Facebook"><span class="fa fa-facebook-square fa-2x"></span></a>';
+txt=txt+'<a href="http://twitter.com/home?status=Currently reading http://www.w3schools.com'+loc+'" target="_blank" title="Twitter"><span class="fa fa-twitter-square fa-2x"></span></a>';
+txt=txt+'<a href="https://plus.google.com/share?url=http://www.w3schools.com'+loc+'" target="_blank" title="Google+"><span class="fa fa-google-plus-square fa-2x"></span></a>';
+document.write(txt);
+} catch(e) {}
+//-->
+</script>
+<br><br>
+<a href="javascript:void(0);" onclick="clickFBLike()" title="Like W3Schools on Facebook">
+<span class="fa fa-thumbs-o-up fa-2x"></span></a>
+<div id="fblikeframe" class="w3-modal">
+<div class="w3-modal-content w3-padding-64 w3-animate-zoom" id="popupDIV"></div>
+</div>
+</div>
+</div>
+
+<div class="sidesection">
+<h4><a target="_blank" href="http://www.w3schools.com/cert/default.asp">CERTIFICATES</a></h4>
+<p>HTML, CSS, JavaScript, PHP, jQuery, Bootstrap and XML.</p>
+<a target="_blank" href="http://www.w3schools.com/cert/default.asp" class="w3-btn w3-dark-grey">
+Read More &raquo;</a>
+</div>
+
+</div>
+</div>
+<div class="footer w3-container w3-white">      
+
+<hr>
+<div style="overflow:auto">
+<!-- BottomMediumRectangle -->
+<div class="bottomad" id='div-gpt-ad-1422003450156-0'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-0'); });
+</script>
+</div>
+<!-- RightBottomMediumRectangle -->
+<div class="bottomad" id='div-gpt-ad-1422003450156-3'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-3'); });
+</script>
+</div>
+</div>
+
+<hr>
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" onclick="displayError();return false" style="white-space:nowrap;">REPORT ERROR</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="#" target="_blank" onclick="printPage();return false;">PRINT PAGE</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="http://www.w3schools.com/forum/default.asp" target="_blank">FORUM</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="http://www.w3schools.com/about/default.asp" target="_top">ABOUT</a>
+</div>
+</div>
+<hr>
+<div class="w3-light-grey w3-padding w3-center" id="err_form" style="display:none;">
+<span onclick="this.parentElement.style.display='none'" class="w3-closebtn">&times;</span>     
+<h2>Your Suggestion:</h2>
+<form>
+<div class="w3-group">      
+<label for="err_email">Your E-mail:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_email" name="err_email">
+</div>
+<div class="w3-group">      
+<label for="err_email">Page address:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_url" name="err_url" disabled="disabled">
+</div>
+<div class="w3-group">
+<label for="err_email">Description:</label>
+<textarea rows="10" class="w3-input" id="err_desc" name="err_desc" style="width:100%;"></textarea>
+</div>
+<div class="form-group">        
+<button type="button" onclick="sendErr()">Submit</button>
+</div>
+<br>
+</form>
+</div>
+<div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;">
+<span onclick="this.parentElement.style.display='none'" class="w3-closebtn">&times;</span>     
+<h2>Thank You For Helping Us!</h2>
+<p>Your message has been sent to W3Schools.</p>
+</div>
+
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Tutorials</h4>
+<a href="http://www.w3schools.com/html/default.asp">HTML Tutorial</a><br>
+<a href="default.html">CSS Tutorial</a><br>
+<a href="http://www.w3schools.com/js/default.asp">JavaScript Tutorial</a><br>
+<a href="http://www.w3schools.com/w3css/default.asp">W3.CSS Tutorial</a><br>
+<a href="http://www.w3schools.com/bootstrap/default.asp">Bootstrap Tutorial</a><br>
+<a href="http://www.w3schools.com/sql/default.asp">SQL Tutorial</a><br>
+<a href="http://www.w3schools.com/php/default.asp">PHP Tutorial</a><br>
+<a href="http://www.w3schools.com/jquery/default.asp">jQuery Tutorial</a><br>
+<a href="http://www.w3schools.com/angular/default.asp">Angular Tutorial</a><br>
+<a href="http://www.w3schools.com/xml/default.asp">XML Tutorial</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 References</h4>
+<a href="http://www.w3schools.com/tags/default.asp">HTML Reference</a><br>
+<a href="http://www.w3schools.com/cssref/default.asp">CSS Reference</a><br>
+<a href="http://www.w3schools.com/jsref/default.asp">JavaScript Reference</a><br>
+<a href="http://www.w3schools.com/w3css/w3css_references.asp">W3.CSS Reference</a><br>
+<a href="http://www.w3schools.com/browsers/default.asp">Browser Statistics</a><br>
+<a href="http://www.w3schools.com/php/php_ref_array.asp">PHP Reference</a><br>
+<a href="http://www.w3schools.com/colors/colors_names.asp">HTML Colors</a><br>
+<a href="http://www.w3schools.com/charsets/default.asp">HTML Character Sets</a><br>
+<a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp">jQuery Reference</a><br>
+<a href="http://www.w3schools.com/angular/angular_ref_directives.asp">AngularJS Reference</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Examples</h4>
+<a href="http://www.w3schools.com/html/html_examples.asp">HTML Examples</a><br>
+<a href="css_examples.html">CSS Examples</a><br>
+<a href="http://www.w3schools.com/js/js_examples.asp">JavaScript Examples</a><br>
+<a href="http://www.w3schools.com/w3css/w3css_examples.asp">W3.CSS Examples</a><br>
+<a href="http://www.w3schools.com/js/js_dom_examples.asp">HTML DOM Examples</a><br>
+<a href="http://www.w3schools.com/php/php_examples.asp">PHP Examples</a><br>
+<a href="http://www.w3schools.com/asp/asp_examples.asp">ASP Examples</a><br>
+<a href="http://www.w3schools.com/jquery/jquery_examples.asp">jQuery Examples</a><br>
+<a href="http://www.w3schools.com/angular/angular_examples.asp">Angular Examples</a><br>
+<a href="http://www.w3schools.com/xml/xml_examples.asp">XML Examples</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Web Certificates</h4>
+<a href="http://www.w3schools.com/cert/default.asp">HTML Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">HTML5 Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">CSS Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">JavaScript Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">jQuery Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">PHP Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">Bootstrap Certificate</a><br>
+<a href="http://www.w3schools.com/cert/default.asp">XML Certificate</a><br>
+</div>
+</div>        
+</div>        
+
+<hr>
+<div class="w3-center w3-small w3-opacity">
+W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.
+Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.
+While using this site, you agree to have read and accepted our <a href="http://www.w3schools.com/about/about_copyright.asp">terms of use</a>,
+<a href="http://www.w3schools.com/about/about_privacy.asp">cookie and privacy policy</a>.
+<a href="http://www.w3schools.com/about/about_copyright.asp">Copyright 1999-2016</a> by Refsnes Data. All Rights Reserved.<br>
+ <a href="http://www.w3schools.com/w3css/">Powered by W3.CSS</a>.<br><br>
+<a href="http://www.w3schools.com/">
+<img style="width:150px;height:28px;border:0" src="../images/w3schoolscom_gray.gif" alt="W3Schools.com"></a>
+</div>
+<br><br>
+</div>
+</div>
+</div>
+
+<div id="nav_tutorials_content" style="display:none;">
+<span onclick='w3_close_nav("tutorials")' class='w3-closebtn w3-xlarge'>&times;</span>
+<div class='w3-row-padding'>
+<div class='w3-col l2 m4'>
+<h3>HTML/CSS</h3>
+<a href='http://www.w3schools.com/html/default.asp'>Learn HTML</a>
+<a href='default.html'>Learn CSS</a>
+<a href='http://www.w3schools.com/w3css/default.asp'>Learn W3.CSS</a>
+<a href='http://www.w3schools.com/colors/default.asp'>Learn Colors</a>
+<a href='http://www.w3schools.com/bootstrap/default.asp'>Learn Bootstrap</a>
+<a href='http://www.w3schools.com/howto/default.asp'>Learn How To</a>
+</div>
+<div class='w3-col l2 m4'>  
+<h3>JavaScript</h3>
+<a href='http://www.w3schools.com/js/default.asp'>Learn JavaScript</a>
+<a href='http://www.w3schools.com/jquery/default.asp'>Learn jQuery</a>
+<a href='http://www.w3schools.com/jquerymobile/default.asp'>Learn jQueryMobile</a>
+<a href='http://www.w3schools.com/appml/default.asp'>Learn AppML</a>
+<a href='http://www.w3schools.com/angular/default.asp'>Learn AngularJS</a>
+<a href='http://www.w3schools.com/ajax/default.asp'>Learn AJAX</a>
+<a href='http://www.w3schools.com/json/default.asp'>Learn JSON</a>
+</div>
+<div class='w3-col l2 m4'>   
+<h3>HTML Graphics</h3>
+<a href='http://www.w3schools.com/canvas/default.asp'>Learn Canvas</a>
+<a href='http://www.w3schools.com/svg/default.asp'>Learn SVG</a>
+<a href='http://www.w3schools.com/icons/default.asp'>Learn Icons</a>
+<a href='http://www.w3schools.com/googleapi/default.asp'>Learn Google Maps</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>Server Side</h3>
+<a href='http://www.w3schools.com/sql/default.asp'>Learn SQL</a>
+<a href='http://www.w3schools.com/php/default.asp'>Learn PHP</a>
+<a href='http://www.w3schools.com/asp/default.asp'>Learn ASP</a>
+<a href='http://www.w3schools.com/aspnet/default.asp'>Learn ASP.NET</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>Web Building</h3>
+<a href="http://www.w3schools.com/w3css/w3css_templates.asp">Web Templates</a>
+<a href='http://www.w3schools.com/browsers/default.asp'>Web Statistics</a>
+<a href='http://www.w3schools.com/cert/default.asp'>Web Certificates</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>XML Tutorials</h3>
+<a href='http://www.w3schools.com/xml/default.asp'>Learn XML</a>
+<a href='http://www.w3schools.com/xsl/default.asp'>Learn XSLT</a>
+</div>
+</div>
+</div>
+<div id="nav_references_content" style="display:none;">
+<span onclick='w3_close_nav("references")' class='w3-closebtn w3-xlarge'>&times;</span>
+<div class='w3-row-padding'>
+<div class='w3-col l2 m4'>
+<h3>HTML</h3>
+<a href='http://www.w3schools.com/tags/default.asp'>HTML Tag Reference</a>
+<a href='http://www.w3schools.com/tags/ref_eventattributes.asp'>HTML Event Reference</a>
+<a href='http://www.w3schools.com/colors/default.asp'>HTML Color Reference</a>
+<a href='http://www.w3schools.com/tags/ref_attributes.asp'>HTML Attribute Reference</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>CSS</h3>
+<a href='http://www.w3schools.com/cssref/default.asp'>CSS Reference</a>
+<a href='http://www.w3schools.com/cssref/css_selectors.asp'>CSS Selector Reference</a>
+<a href='http://www.w3schools.com/w3css/w3css_references.asp'>W3.CSS Reference</a>
+<a href='http://www.w3schools.com/bootstrap/bootstrap_ref_css_text.asp'>Bootstrap Reference</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>JavaScript</h3>
+<a href='http://www.w3schools.com/jsref/default.asp'>JavaScript Reference</a>
+<a href='http://www.w3schools.com/jsref/default.asp'>HTML DOM Reference</a>
+<a href='http://www.w3schools.com/jquery/jquery_ref_selectors.asp'>jQuery Reference</a>
+<a href='http://www.w3schools.com/jquerymobile/jquerymobile_ref_data.asp'>jQuery Mobile Reference</a>
+<a href='http://www.w3schools.com/angular/angular_ref_directives.asp'>AngularJS Reference</a>
+<a href='http://www.w3schools.com/googleAPI/google_maps_ref.asp'>Google Maps Reference</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>Server Side</h3>
+<a href='http://www.w3schools.com/php/php_ref_array.asp'>PHP Reference</a>
+<a href='http://www.w3schools.com/sql/sql_quickref.asp'>SQL Reference</a>
+<a href='http://www.w3schools.com/asp/asp_ref_response.asp'>ASP Reference</a>
+<a href='http://www.w3schools.com/aspnet/webpages_ref_classes.asp'>ASP.NET Reference</a>
+
+</div>
+<div class='w3-col l2 m4'>
+<h3>XML</h3>
+<a href='http://www.w3schools.com/xml/dom_nodetype.asp'>XML Reference</a>
+<a href='http://www.w3schools.com/xsl/xsl_w3celementref.asp'>XSLT Reference</a>
+<a href='http://www.w3schools.com/xml/schema_elements_ref.asp'>XML Schema Reference</a>
+<a href='http://www.w3schools.com/svg/svg_reference.asp'>SVG Reference</a>
+</div>
+<div class='w3-col l2 m4'>
+<h3>Charsets</h3>
+<a href='http://www.w3schools.com/charsets/default.asp'>HTML Character Sets</a>
+<a href='http://www.w3schools.com/charsets/ref_html_ascii.asp'>HTML ASCII</a>
+<a href='http://www.w3schools.com/charsets/ref_html_ansi.asp'>HTML ANSI</a>
+<a href='http://www.w3schools.com/charsets/ref_html_ansi.asp'>HTML Windows-1252</a>
+<a href='http://www.w3schools.com/charsets/ref_html_8859.asp'>HTML ISO-8859-1</a>
+<a href='http://www.w3schools.com/charsets/ref_html_symbols.asp'>HTML Symbols</a>
+<a href='http://www.w3schools.com/charsets/ref_html_utf8.asp'>HTML UTF-8</a>
+</div>
+</div>
+</div>
+<div id="nav_examples_content" style="display:none;">
+<span onclick='w3_close_nav("examples")' class='w3-closebtn w3-xlarge'>&times;</span>
+<div class='w3-row-padding'>
+<div class='w3-col l3 m6'>
+<h3>HTML/CSS</h3>
+<a href='http://www.w3schools.com/html/html_examples.asp'>HTML Examples</a>
+<a href='css_examples.html'>CSS Examples</a>
+<a href='http://www.w3schools.com/w3css/w3css_examples.asp'>W3.CSS Examples</a>
+</div>
+<div class='w3-col l3 m6'>
+<h3>JavaScript</h3>
+<a href='http://www.w3schools.com/js/js_examples.asp' target='_top'>JavaScript Examples</a>
+<a href='http://www.w3schools.com/js/js_dom_examples.asp' target='_top'>HTML DOM Examples</a>
+<a href='http://www.w3schools.com/jquery/jquery_examples.asp' target='_top'>jQuery Examples</a>
+<a href='http://www.w3schools.com/jquerymobile/jquerymobile_examples.asp' target='_top'>jQuery Mobile Examples</a>
+<a href='http://www.w3schools.com/angular/angular_examples.asp' target='_top'>AngularJS Examples</a>
+<a href='http://www.w3schools.com/ajax/ajax_examples.asp' target='_top'>AJAX Examples</a>
+</div>
+<div class='w3-col l3 m6'>
+<h3>Server Side</h3>
+<a href='http://www.w3schools.com/php/php_examples.asp' target='_top'>PHP Examples</a>
+<a href="http://www.w3schools.com/asp/asp_examples.asp" target="_top">ASP Examples</a>
+<a href="http://www.w3schools.com/aspnet/webpages_examples.asp" target="_top">ASP.NET Examples</a>
+</div>
+<div class='w3-col l3 m6'>
+<h3>XML</h3>
+<a href='http://www.w3schools.com/xml/xml_examples.asp' target='_top'>XML Examples</a>
+<a href='http://www.w3schools.com/xsl/xsl_examples.asp' target='_top'>XSL Examples</a>
+<a href='http://www.w3schools.com/xsl/xsl_examples.asp' target='_top'>XSLT Examples</a>
+<a href='http://www.w3schools.com/xsl/xpath_examples.asp' target='_top'>XPath Examples</a>
+<a href='http://www.w3schools.com/xml/schema_example.asp' target='_top'>XML Schema Examples</a>
+<a href='http://www.w3schools.com/svg/svg_examples.asp' target='_top'>SVG Examples</a>
+</div>
+</div>
+</div>
+<div id='nav_translate_content' style="display:none">
+<span onclick='w3_close_nav("translate")' class='w3-closebtn w3-xlarge'>&times;</span>
+<br><br>Translate w3schools.com:
+<div id='google_translate_element'></div>
+<br>
+</div>
+<div id='nav_search_content' style="display:none">
+<span onclick='w3_close_nav("search")' class='w3-closebtn w3-xlarge'>&times;</span>
+<br><br>
+<div class='searchdiv'>
+Search w3schools.com:
+<div id='googleSearch'><div class='gcse-search'></div></div>
+</div>
+<br>
+</div>
+<script src="../lib/w3schools_footer.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/css3_images.asp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 18 Aug 2016 05:56:21 GMT -->
+</html>

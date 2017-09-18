@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="ie ie8"> <![endif]-->
+<!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+
+<!-- Mirrored from www.tutorialspoint.com/python/os_file_methods.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Jan 2017 10:28:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<!-- Basic -->
+<meta charset="utf-8">
+<title>Python OS File/Directory Methods</title>
+<meta name="description" content="Python OS File/Directory Methods - Learning Python in simple and easy steps : A beginner's tutorial containing complete knowledge of Python Syntax Object Oriented Language, Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML Programming." />
+<meta name="Keywords" content="Python, Tutorials, Learning, Beginners, Basics, Object Oriented Language, Methods, Overriding, Networking, Multithreading,Methods, Tuples, Tools/Utilities, Exceptions Handling, Sockets, GUI, Extentions, XML, Programming." />
+<base  />
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="fb:app_id" content="471319149685276" />
+<meta property="og:site_name" content="www.tutorialspoint.com" />
+<meta name="robots" content="index, follow"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="author" content="tutorialspoint.com">
+<script type="text/javascript" src="../theme/js/script-min-v4.js"></script>
+<link rel="stylesheet" href="../theme/css/style-min.css">
+<!-- Head Libs -->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="/theme/css/ie8.css">
+<![endif]-->
+<style>
+pre.prettyprint.tryit {min-height:37px; background: #eee url(images/try-it.jpg) top right no-repeat !important}select{ border:0 !important; outline: 1px inset black !important; outline-offset: -1px !important; }
+div.feature-box div.feature-box-icon, .col-md-3 .course-box, li.heading, div.footer-copyright { background: #fdbf00 url(../images/pattern.png) repeat center center !important;}
+.sub-main-menu .sub-menuu div:hover, .sub-main-menu .viewall, header nav ul.nav-main li a:hover, button.btn-responsive-nav, header div.search button.btn-default { background: #fdbf00 !important;}
+.submenu-item{ border-bottom: 2px solid #fdbf00 !important; border-top: 2px solid #fdbf00 !important }
+</style>
+<script>
+$(document).ready(function() {
+  $('input[name="q"]').keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      return false;
+    }
+  });
+});
+</script>
+</head>
+<body onload="prettyPrint()">
+<div class="wrapLoader">
+   <div class="imgLoader">
+      <img  src="../images/loading-cg.gif" alt="" width="70" height="70" />
+   </div>
+</div>
+<header>
+   <div class="container">			
+      <h1 class="logo">
+      <a href="https://www.tutorialspoint.com/index.htm" title="tutorialspoint">
+      <img alt="tutorialspoint" src="images/logo.png">
+      </a>
+      </h1>			
+      <nav>
+         <ul class="nav nav-pills nav-top">
+            <li><a href="https://www.tutorialspoint.com/about/about_careers.htm" style="background: #fffb09; font-weight: bold;"><i class="icon icon-suitcase"></i> Jobs</a></li>
+            <li> <a href="http://www.sendfiles.net/"><i class="fa fa-send"></i> &nbsp;SENDFiles</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/whiteboard.htm"><img src="../theme/css/icons/image-editor.png" alt="Whiteboard" title="Whiteboard"> &nbsp;Whiteboard</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/netmeeting.php"><i class="fa-camera"></i> &nbsp;Net Meeting</a> </li>
+            <li> <a href="https://www.tutorialspoint.com/online_dev_tools.htm"> <i class="dev-tools-menu" style="opacity:.5"></i> Tools </a> </li>
+            <li> <a href="https://www.tutorialspoint.com/articles/index.php"><i class="icon icon-file-text-o"></i> &nbsp;Articles</a> </li>            
+            <li class="top-icons">
+              <ul class="social-icons">
+              <li class="facebook"><a href="https://www.facebook.com/tutorialspointindia" target="_blank" data-placement="bottom" title="tutorialspoint @ Facebook">Facebook</a></li>
+              <li class="googleplus"><a href="https://plus.google.com/u/0/116678774017490391259/posts" target="_blank" data-placement="bottom" title="tutorialspoint @ Google+">Google+</a></li>
+              <li class="twitter"><a href="https://www.twitter.com/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" data-placement="bottom" title="tutorialspoint @ Linkedin">Linkedin</a></li>
+              <li class="youtube"><a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" data-placement="bottom" title="tutorialspoint YouTube">YouTube</a></li>
+              </ul>
+           </li>
+         </ul>
+      </nav>
+         <!-- search code here  --> 
+      <button class="btn btn-responsive-nav btn-inverse" data-toggle="collapse" data-target=".nav-main-collapse" id="pull" style="top: 24px!important"> <i class="icon icon-bars"></i> </button>
+   </div>
+  
+   <div class="navbar nav-main">
+      <div class="container">
+         <nav class="nav-main mega-menu">
+            <ul class="nav nav-pills nav-main" id="mainMenu">
+               <li class="dropdown no-sub-menu"> <a class="dropdown" href="https://www.tutorialspoint.com/index.htm"><i class="icon icon-home"></i> Home</a> </li>   
+               <li class="dropdown" id="liTL"><a class="dropdown" href="javascript:void(0);"><span class="tut-lib"> Tutorials Library <i class="fa-caret-down"></i></span></a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/codingground.htm"><i class="fa-code"></i> Coding Ground </a> </li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/tutor_connect/index.php"><i class="fa-user"> </i> Tutor Connect</a></li>
+               <li class="dropdown no-sub-menu"><a class="dropdown" href="https://www.tutorialspoint.com/videotutorials/index.htm"><i class="fa-toggle-right"></i> Videos </a></li>
+               <li class="dropdown no-sub-menu">
+                  <div class="searchform-popup">
+                     <input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == 'Search your favorite tutorials...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search your favorite tutorials...';}" autocomplete="off">
+                     <div class="magnifying-glass"><i class="icon-search"></i> Search </div>
+                 </div>
+               </li>
+            </ul>
+         </nav>
+         <div class="submenu-item sub-main-menu" id="top-sub-menu"></div>
+         
+      </div>
+   </div>	
+</header>
+<div style="clear:both;"></div>
+<div role="main" class="main">
+<div class="container">
+<div class="row">
+<div class="col-md-2">
+<aside class="sidebar">
+<div class="mini-logo">
+<img src="images/python-mini.jpg" alt="Python Tutorial" />
+</div>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Basic Tutorial</li>
+<li><a target="_top" href="index-2.html">Python - Home</a></li>
+<li><a target="_top" href="python_overview.html">Python - Overview</a></li>
+<li><a target="_top" href="python_environment.html">Python - Environment Setup</a></li>
+<li><a target="_top" href="python_basic_syntax.html">Python - Basic Syntax</a></li>
+<li><a target="_top" href="python_variable_types.html">Python - Variable Types</a></li>
+<li><a target="_top" href="python_basic_operators.html">Python - Basic Operators</a></li>
+<li><a target="_top" href="python_decision_making.html">Python - Decision Making</a></li>
+<li><a target="_top" href="python_loops.html">Python - Loops</a></li>
+<li><a target="_top" href="python_numbers.html">Python - Numbers</a></li>
+<li><a target="_top" href="python_strings.html">Python - Strings</a></li>
+<li><a target="_top" href="python_lists.html">Python - Lists</a></li>
+<li><a target="_top" href="python_tuples.html">Python - Tuples</a></li>
+<li><a target="_top" href="python_dictionary.html">Python - Dictionary</a></li>
+<li><a target="_top" href="python_date_time.html">Python - Date &amp; Time</a></li>
+<li><a target="_top" href="python_functions.html">Python - Functions</a></li>
+<li><a target="_top" href="python_modules.html">Python - Modules</a></li>
+<li><a target="_top" href="python_files_io.html">Python - Files I/O</a></li>
+<li><a target="_top" href="python_exceptions.html">Python - Exceptions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python Advanced Tutorial</li>
+<li><a target="_top" href="python_classes_objects.html">Python - Classes/Objects</a></li>
+<li><a target="_top" href="python_reg_expressions.html">Python - Reg Expressions</a></li>
+<li><a target="_top" href="python_cgi_programming.html">Python - CGI Programming</a></li>
+<li><a target="_top" href="python_database_access.html">Python - Database Access</a></li>
+<li><a target="_top" href="python_networking.html">Python - Networking</a></li>
+<li><a target="_top" href="python_sending_email.html">Python - Sending Email</a></li>
+<li><a target="_top" href="python_multithreading.html">Python - Multithreading</a></li>
+<li><a target="_top" href="python_xml_processing.html">Python - XML Processing</a></li>
+<li><a target="_top" href="python_gui_programming.html">Python - GUI Programming</a></li>
+<li><a target="_top" href="python_further_extensions.html">Python - Further Extensions</a></li>
+</ul>
+<ul class="nav nav-list primary left-menu">
+<li class="heading">Python  Useful Resources</li>
+<li><a target="_top" href="python_questions_answers.html">Python - Questions and Answers</a></li>
+<li><a target="_top" href="python_quick_guide.html">Python - Quick Guide</a></li>
+<li><a target="_top" href="python_tools_utilities.html">Python - Tools/Utilities</a></li>
+<li><a target="_top" href="python_useful_resources.html">Python - Useful Resources</a></li>
+<li><a target="_top" href="python_discussion.html">Python - Discussion</a></li>
+</ul>
+<ul class="nav nav-list primary push-bottom left-menu special">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+</aside>
+</div>
+<!-- PRINTING STARTS HERE -->
+<div class="row">
+<div class="content">
+<div class="col-md-7 middle-col">
+<h1>Python OS File/Directory Methods</h1>
+<div class="topgooglead">
+<hr />
+<div style="padding-bottom:5px;padding-left:10px;">Advertisements</div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 468;
+google_ad_height = 60;
+google_ad_format = "468x60_as";
+google_ad_type = "image";
+google_ad_channel = "";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt"> 
+</script>
+</div>
+<hr>
+<div class="pre-btn">
+<a href="python_files_io.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="python_files_io.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="clearer"></div>
+<hr />
+<p>The <b>os</b> module provides a big range of useful methods to manipulate files and directories. Most of the useful methods are listed here:</p>
+<table class="table table-bordered">
+<tr>
+<th style="width:5%">SN</th><th>Methods with Description</th></tr>
+<tr><td>1</td><td><p><a href="os_access.htm">os.access(path, mode)</a></p><br />Use the real uid/gid to test for access to path. </td></tr>
+<tr><td>2</td><td><p><a href="os_chdir.htm">os.chdir(path)</a></p><br />Change the current working directory to path</td></tr>
+<tr><td>3</td><td><p><a href="os_chflags.htm">os.chflags(path, flags)</a></p><br />Set the flags of path to the numeric flags. </td></tr>
+<tr><td>4</td><td><p><a href="os_chmod.htm">os.chmod(path, mode)</a></p><br />Change the mode of path to the numeric mode.</td></tr>
+<tr><td>5</td><td><p><a href="os_chown.htm">os.chown(path, uid, gid)</a></p><br />Change the owner and group id of path to the numeric uid and gid.</td></tr>
+<tr><td>6</td><td><p><a href="os_chroot.htm">os.chroot(path)</a></p><br />Change the root directory of the current process to path. </td></tr>
+<tr><td>7</td><td><p><a href="os_close.htm">os.close(fd)</a></p><br />Close file descriptor fd.</td></tr>
+<tr><td>8</td><td><p><a href="os_closerange.htm">os.closerange(fd_low, fd_high)</a></p><br />Close all file descriptors from fd_low (inclusive) to fd_high (exclusive), ignoring errors.</td></tr>
+<tr><td>9</td><td><p><a href="os_dup.htm">os.dup(fd)</a></p><br />Return a duplicate of file descriptor fd.</td></tr>
+<tr><td>10</td><td><p><a href="os_dup2.htm">os.dup2(fd, fd2)</a></p><br />Duplicate file descriptor fd to fd2, closing the latter first if necessary.</td></tr>
+<tr><td>11</td><td><p><a href="os_fchdir.htm">os.fchdir(fd)</a></p><br />Change the current working directory to the directory represented by the file descriptor fd. </td></tr>
+<tr><td>12</td><td><p><a href="os_fchmod.htm">os.fchmod(fd, mode)</a></p><br />Change the mode of the file given by fd to the numeric mode.</td></tr>
+<tr><td>13</td><td><p><a href="os_fchown.htm">os.fchown(fd, uid, gid)</a></p><br />Change the owner and group id of the file given by fd to the numeric uid and gid. </td></tr>
+<tr><td>14</td><td><p><a href="os_fdatasync.htm">os.fdatasync(fd)</a></p><br />Force write of file with filedescriptor fd to disk.</td></tr>
+<tr><td>15</td><td><p><a href="os_fdopen.htm">os.fdopen(fd[, mode[, bufsize]])</a></p><br />Return an open file object connected to the file descriptor fd. </td></tr>
+<tr><td>16</td><td><p><a href="os_fpathconf.htm">os.fpathconf(fd, name)</a></p><br />Return system configuration information relevant to an open file. name specifies the configuration value to retrieve.</td></tr>
+<tr><td>17</td><td><p><a href="os_fstat.htm">os.fstat(fd)</a></p><br />Return status for file descriptor fd, like stat(). </td></tr>
+<tr><td>18</td><td><p><a href="os_fstatvfs.htm">os.fstatvfs(fd)</a></p><br />Return information about the filesystem containing the file associated with file descriptor fd, like statvfs().</td></tr>
+<tr><td>19</td><td><p><a href="os_fsync.htm">os.fsync(fd)</a></p><br />Force write of file with filedescriptor fd to disk.</td></tr>
+<tr><td>20</td><td><p><a href="os_ftruncate.htm">os.ftruncate(fd, length)</a></p><br />Truncate the file corresponding to file descriptor fd, so that it is at most length bytes in size.</td></tr>
+<tr><td>21</td><td><p><a href="os_getcwd.htm">os.getcwd()</a></p><br />Return a string representing the current working directory. </td></tr>
+<tr><td>22</td><td><p><a href="os_getcwdu.htm">os.getcwdu()</a></p><br />Return a Unicode object representing the current working directory.</td></tr>
+<tr><td>23</td><td><p><a href="os_isatty.htm">os.isatty(fd)</a></p><br />Return True if the file descriptor fd is open and connected to a tty(-like) device, else False.</td></tr>
+<tr><td>24</td><td><p><a href="os_lchflags.htm">os.lchflags(path, flags)</a></p><br />Set the flags of path to the numeric flags, like chflags(), but do not follow symbolic links.</td></tr>
+<tr><td>25</td><td><p><a href="os_lchmod.htm">os.lchmod(path, mode)</a></p><br />Change the mode of path to the numeric mode.</td></tr>
+<tr><td>26</td><td><p><a href="os_lchown.htm">os.lchown(path, uid, gid)</a></p><br />Change the owner and group id of path to the numeric uid and gid. This function will not follow symbolic links. </td></tr>
+<tr><td>27</td><td><p><a href="os_link.htm">os.link(src, dst)</a></p><br />Create a hard link pointing to src named dst. </td></tr>
+<tr><td>28</td><td><p><a href="os_listdir.htm">os.listdir(path)</a></p><br />Return a list containing the names of the entries in the directory given by path. </td></tr>
+<tr><td>29</td><td><p><a href="os_lseek.htm">os.lseek(fd, pos, how)</a></p><br />Set the current position of file descriptor fd to position pos, modified by how.</td></tr>
+<tr><td>30</td><td><p><a href="os_lstat.htm">os.lstat(path)</a></p><br />Like stat(), but do not follow symbolic links. </td></tr>
+<tr><td>31</td><td><p><a href="os_major.htm">os.major(device)</a></p><br />Extract the device major number from a raw device number.</td></tr>
+<tr><td>32</td><td><p><a href="os_makedev.htm">os.makedev(major, minor)</a></p><br />Compose a raw device number from the major and minor device numbers.</td></tr>
+<tr><td>33</td><td><p><a href="os_makedirs.htm">os.makedirs(path[, mode])</a></p><br />Recursive directory creation function.</td></tr>
+<tr><td>34</td><td><p><a href="os_minor.htm">os.minor(device)</a></p><br />Extract the device minor number from a raw device number .</td></tr>
+<tr><td>35</td><td><p><a href="os_mkdir.htm">os.mkdir(path[, mode])</a></p><br />Create a directory named path with numeric mode mode.</td></tr>
+<tr><td>36</td><td><p><a href="os_mkfifo.htm">os.mkfifo(path[, mode])</a></p><br />Create a FIFO (a named pipe) named path with numeric mode mode. The default mode is 0666 (octal). </td></tr>
+<tr><td>37</td><td><p><a href="os_mknod.htm">os.mknod(filename[, mode=0600, device])</a><br />Create a filesystem node (file, device special file or named pipe) named filename.</td></tr>
+<tr><td>38</td><td><p><a href="os_open.htm">os.open(file, flags[, mode])</a></p><br />Open the file file and set various flags according to flags and possibly its mode according to mode.</td></tr>
+<tr><td>39</td><td><p><a href="os_openpty.htm">os.openpty()</a></p><br />Open a new pseudo-terminal pair. Return a pair of file descriptors (master, slave) for the pty and the tty, respectively.</td></tr>
+<tr><td>40</td><td><p><a href="os_pathconf.htm">os.pathconf(path, name)</a></p><br />Return system configuration information relevant to a named file. </td></tr>
+<tr><td>41</td><td><p><a href="os_pipe.htm">os.pipe()</a></p><br />Create a pipe. Return a pair of file descriptors (r, w) usable for reading and writing, respectively.</td></tr>
+<tr><td>42</td><td><p><a href="os_popen.htm">os.popen(command[, mode[, bufsize]])</a></p><br />Open a pipe to or from command. </td></tr>
+<tr><td>43</td><td><p><a href="os_read.htm">os.read(fd, n)</a></p><br />Read at most n bytes from file descriptor fd. Return a string containing the bytes read. If the end of the file referred to by fd has been reached, an empty string is returned.</td></tr>
+<tr><td>44</td><td><p><a href="os_readlink.htm">os.readlink(path)</a></p><br />Return a string representing the path to which the symbolic link points. </td></tr>
+<tr><td>45</td><td><p><a href="os_remove.htm">os.remove(path)</a></p><br />Remove the file path.</td></tr>
+<tr><td>46</td><td><p><a href="os_removedirs.htm">os.removedirs(path)</a></p><br />Remove directories recursively.</td></tr>
+<tr><td>47</td><td><p><a href="os_rename.htm">os.rename(src, dst)</a></p><br />Rename the file or directory src to dst.</td></tr>
+<tr><td>48</td><td><p><a href="os_renames.htm">os.renames(old, new)</a></p><br />Recursive directory or file renaming function.</td></tr>
+<tr><td>49</td><td><p><a href="os_rmdir.htm">os.rmdir(path)</a></p><br />Remove the directory path</td></tr>
+<tr><td>50</td><td><p><a href="os_stat.htm">os.stat(path)</a></p><br />Perform a stat system call on the given path.</td></tr>
+<tr><td>51</td><td><p><a href="os_stat_float_times.htm">os.stat_float_times([newvalue])</a><br />Determine whether stat_result represents time stamps as float objects. </td></tr>
+<tr><td>52</td><td><p><a href="os_statvfs.htm">os.statvfs(path)</a></p><br />Perform a statvfs system call on the given path.</td></tr>
+<tr><td>53</td><td><p><a href="os_symlink.htm">os.symlink(src, dst)</a></p><br />Create a symbolic link pointing to src named dst.</td></tr>
+<tr><td>54</td><td><p><a href="os_tcgetpgrp.htm">os.tcgetpgrp(fd)</a></p><br />Return the process group associated with the terminal given by fd (an open file descriptor as returned by open()). </td></tr>
+<tr><td>55</td><td><p><a href="os_tcsetpgrp.htm">os.tcsetpgrp(fd, pg)</a></p><br />Set the process group associated with the terminal given by fd (an open file descriptor as returned by open()) to pg.</td></tr>
+<tr><td>56</td><td><p><a href="os_tempnam.htm">os.tempnam([dir[, prefix]])</a></p><br />Return a unique path name that is reasonable for creating a temporary file. </td></tr>
+<tr><td>57</td><td><p><a href="os_tmpfile.htm">os.tmpfile()</a></p><br />Return a new file object opened in update mode (w+b). </td></tr>
+<tr><td>58</td><td><p><a href="os_tmpnam.htm">os.tmpnam()</a></p><br />Return a unique path name that is reasonable for creating a temporary file.</td></tr>
+<tr><td>59</td><td><p><a href="os_ttyname.htm">os.ttyname(fd)</a></p><br />Return a string which specifies the terminal device associated with file descriptor fd. If fd is not associated with a terminal device, an exception is raised.</td></tr>
+<tr><td>60</td><td><p><a href="os_unlink.htm">os.unlink(path)</a></p><br />Remove the file path. </td></tr>
+<tr><td>61</td><td><p><a href="os_utime.htm">os.utime(path, times)</a></p><br />Set the access and modified times of the file specified by path. </td></tr>
+<tr><td>62</td><td><p><a href="os_walk.htm">os.walk(top[, topdown=True[, onerror=None[, followlinks=False]]])</a></p><br />Generate the file names in a directory tree by walking the tree either top-down or bottom-up.</td></tr>
+<tr><td>63</td><td><p><a href="os_write.htm">os.write(fd, str)</a></p><br />Write the string str to file descriptor fd. Return the number of bytes actually written.</td></tr>
+</table>
+<hr />
+<div class="pre-btn">
+<a href="python_files_io.html"><i class="icon icon-arrow-circle-o-left big-font"></i> Previous Page</a>
+</div>
+<div class="print-btn center">
+<a href="https://www.tutorialspoint.com/cgi-bin/printpage.cgi" target="_blank"><i class="icon icon-print big-font"></i> Print</a>
+</div>
+<div class="pdf-btn">
+<a href="pdf/os_file_methods.pdf" title="Python OS File/Directory Methods" target="_blank"><i class="icon icon-file-pdf-o big-font"></i> PDF</a>
+</div>
+<div class="nxt-btn">
+<a href="python_files_io.html">Next Page <i class="icon icon-arrow-circle-o-right big-font"></i>&nbsp;</a>
+</div>
+<div class="parent-file">python_files_io.htm</div>
+<hr>
+<!-- PRINTING ENDS HERE -->
+<div class="bottomgooglead">
+<div class="bottomadtag">Advertisements</div>
+<script type="text/javascript"><!--
+var width = 580;
+var height = 400;
+var format = "580x400_as";
+if( window.innerWidth < 468 ){
+   width = 300;
+   height = 250;
+   format = "300x250_as";
+}
+google_ad_client = "pub-7133395778201029";
+google_ad_width = width;
+google_ad_height = height;
+google_ad_format = format;
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-3" id="rightbar">
+<div class="simple-ad">
+<a href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.facebook.com/sharer.php?u=' + 'http://www.tutorialspoint.com/python/os_file_methods.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/facebookIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://twitter.com/share?url=' + 'http://www.tutorialspoint.com/python/os_file_methods.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/twitterIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.linkedin.com/cws/share?url=' + 'http://www.tutorialspoint.com/python/os_file_methods.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/linkedinIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://plus.google.com/share?url=http://www.tutorialspoint.com/python/os_file_methods.htm','sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/googlePlusIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://www.stumbleupon.com/submit?url=http://www.tutorialspoint.com/python/os_file_methods.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=456,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/StumbleUponIcon.jpg" alt="img" />
+</a>
+<a  href="javascript:void(0)" onclick="var sTop = window.screen.height/2-(218); var sLeft = window.screen.width/2-(313);window.open('https://reddit.com/submit?url=http://www.tutorialspoint.com/python/os_file_methods.htm&amp;title='+ document.title,'sharer','toolbar=0,status=0,width=626,height=656,top='+sTop+',left='+sLeft);return false;">
+<img src="../images/reddit.jpg" alt="img" />
+</a>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "pub-7133395778201029";
+google_ad_width = 300;
+google_ad_height = 600;
+google_ad_format = "300x600_as";
+google_ad_type = "image";
+google_ad_channel ="";
+//--></script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+<div class="rightgooglead">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2537027957187252";
+/* Right Side Ad */
+google_ad_slot = "right_side_ad";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="../../pagead2.googlesyndication.com/pagead/f.txt">
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-1">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"> <img alt="Tutorials Point" class="img-responsive" src="../scripts/img/logo-footer.png"> </a>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <nav id="sub-menu">
+      <ul>
+         <li><a href="https://www.tutorialspoint.com/about/tutorials_writing.htm">Write for us</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/faq.htm">FAQ's</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/about_helping.htm">Helping</a></li>
+         <li><a href="https://www.tutorialspoint.com/about/contact_us.htm">Contact</a></li>
+      </ul>
+   </nav>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12">
+<p>&copy; Copyright 2016. All Rights Reserved.</p>
+</div>
+<div class="col-md-4 col-sm-12 col-xs-12">
+   <div class="news-group">
+      <input type="text" class="form-control-foot search" name="textemail" id="textemail" autocomplete="off" placeholder="Enter email for newsletter" onfocus="if (this.value == 'Enter email for newsletter...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter email for newsletter...';}">
+      <span class="input-group-btn"> <button class="btn btn-default btn-footer" id="btnemail" type="submit" onclick="javascript:void(0);">go</button> </span>
+      <div id="newsresponse"></div>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Libs -->
+<script type="text/javascript" src="../theme/js/custom-min.js"></script>
+<script src="../../www.google-analytics.com/urchin.js">
+</script>
+<script type="text/javascript">
+_uacct = "UA-232293-6";
+urchinTracker();
+$('.pg-icon').click(function(){
+   $('.wrapLoader').show();
+});
+</script>
+<script type="text/javascript" src="../theme/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+   var tryit = new $.TryIt('try_python.html');
+   tryit.compile();
+</script></div>
+</body>
+
+<!-- Mirrored from www.tutorialspoint.com/python/os_file_methods.htm by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Jan 2017 10:28:59 GMT -->
+</html>
